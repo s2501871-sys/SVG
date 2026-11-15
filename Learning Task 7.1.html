@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>8 HTML5 Canvas Graphical Arts</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #ffffff;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+    canvas {
+      display: block;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+    }
+    p {
+      margin: 8px 0 2px;
+      font-weight: bold;
+      font-size: 14px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="gallery">
+    <div class="card"><canvas id="c1" width="200" height="200"></canvas><p>1. Rocket Ship</p></div>
+    <div class="card"><canvas id="c2" width="200" height="200"></canvas><p>2. Watermelon Slice</p></div>
+    <div class="card"><canvas id="c3" width="200" height="200"></canvas><p>3. Cactus in Pot</p></div>
+    <div class="card"><canvas id="c4" width="200" height="200"></canvas><p>4. Retro Camera</p></div>
+    <div class="card"><canvas id="c5" width="200" height="200"></canvas><p>5. Ice Cream Cone</p></div>
+    <div class="card"><canvas id="c6" width="200" height="200"></canvas><p>6. Sailboat</p></div>
+    <div class="card"><canvas id="c7" width="200" height="200"></canvas><p>7. Little House</p></div>
+    <div class="card"><canvas id="c8" width="200" height="200"></canvas><p>8. Smiling Robot</p></div>
+  </div>
+
+  <script>
+    const ctx1 = document.getElementById('c1').getContext('2d');
+    ctx1.fillStyle = '#1E2749';
+    ctx1.fillRect(0, 0, 200, 200);
+    ctx1.fillStyle = '#FFE66D';
+    ctx1.beginPath();
+    ctx1.arc(35, 40, 2.5, 0, Math.PI * 2);
+    ctx1.arc(165, 50, 3, 0, Math.PI * 2);
+    ctx1.arc(45, 145, 2, 0, Math.PI * 2);
+    ctx1.arc(160, 155, 2.5, 0, Math.PI * 2);
+    ctx1.fill();
+    ctx1.fillStyle = '#FF9F1C';
+    ctx1.beginPath();
+    ctx1.moveTo(85, 145);
+    ctx1.lineTo(100, 182);
+    ctx1.lineTo(115, 145);
+    ctx1.fill();
+    ctx1.fillStyle = '#FF5964';
+    ctx1.beginPath();
+    ctx1.moveTo(75, 110);
+    ctx1.lineTo(52, 148);
+    ctx1.lineTo(78, 142);
+    ctx1.moveTo(125, 110);
+    ctx1.lineTo(148, 148);
+    ctx1.lineTo(122, 142);
+    ctx1.fill();
+    ctx1.fillStyle = '#FFFFFF';
+    ctx1.beginPath();
+    ctx1.ellipse(100, 95, 25, 55, 0, 0, Math.PI * 2);
+    ctx1.fill();
+    ctx1.fillStyle = '#FF5964';
+    ctx1.beginPath();
+    ctx1.moveTo(79, 65);
+    ctx1.quadraticCurveTo(100, 25, 121, 65);
+    ctx1.fill();
+    ctx1.fillStyle = '#38AECC';
+    ctx1.beginPath();
+    ctx1.arc(100, 95, 12, 0, Math.PI * 2);
+    ctx1.fill();
+    ctx1.strokeStyle = '#D0D6E2';
+    ctx1.lineWidth = 3;
+    ctx1.stroke();
+
+    const ctx2 = document.getElementById('c2').getContext('2d');
+    ctx2.fillStyle = '#FFF8E7';
+    ctx2.fillRect(0, 0, 200, 200);
+    ctx2.fillStyle = '#2EC4B6';
+    ctx2.beginPath();
+    ctx2.arc(100, 75, 75, 0, Math.PI);
+    ctx2.fill();
+    ctx2.fillStyle = '#FFFFFF';
+    ctx2.beginPath();
+    ctx2.arc(100, 75, 65, 0, Math.PI);
+    ctx2.fill();
+    ctx2.fillStyle = '#FF5964';
+    ctx2.beginPath();
+    ctx2.arc(100, 75, 58, 0, Math.PI);
+    ctx2.fill();
+    ctx2.fillStyle = '#2B2D42';
+    const seeds = [[72, 95], [100, 92], [128, 95], [85, 115], [115, 115]];
+    seeds.forEach(([x, y]) => {
+      ctx2.beginPath();
+      ctx2.ellipse(x, y, 3, 5, 0, 0, Math.PI * 2);
+      ctx2.fill();
+    });
+
+    const ctx3 = document.getElementById('c3').getContext('2d');
+    ctx3.fillStyle = '#EDF6F9';
+    ctx3.fillRect(0, 0, 200, 200);
+    ctx3.fillStyle = '#52B788';
+    ctx3.beginPath();
+    ctx3.roundRect(52, 72, 35, 18, 9);
+    ctx3.roundRect(52, 55, 18, 35, 9);
+    ctx3.fill();
+    ctx3.beginPath();
+    ctx3.roundRect(113, 85, 35, 18, 9);
+    ctx3.roundRect(130, 65, 18, 38, 9);
+    ctx3.fill();
+    ctx3.fillStyle = '#40916C';
+    ctx3.beginPath();
+    ctx3.roundRect(82, 35, 36, 95, 18);
+    ctx3.fill();
+    ctx3.fillStyle = '#FF758F';
+    ctx3.beginPath();
+    ctx3.arc(100, 32, 9, 0, Math.PI * 2);
+    ctx3.fill();
+    ctx3.fillStyle = '#E07A5F';
+    ctx3.beginPath();
+    ctx3.moveTo(68, 125);
+    ctx3.lineTo(132, 125);
+    ctx3.lineTo(122, 175);
+    ctx3.lineTo(78, 175);
+    ctx3.closePath();
+    ctx3.fill();
+    ctx3.fillStyle = '#C85A3E';
+    ctx3.fillRect(62, 115, 76, 14);
+
+    const ctx4 = document.getElementById('c4').getContext('2d');
+    ctx4.fillStyle = '#FDE2E4';
+    ctx4.fillRect(0, 0, 200, 200);
+    ctx4.fillStyle = '#4A4E69';
+    ctx4.fillRect(45, 50, 22, 12);
+    ctx4.fillRect(135, 52, 18, 10);
+    ctx4.fillStyle = '#3D405B';
+    ctx4.beginPath();
+    ctx4.roundRect(30, 60, 140, 85, 14);
+    ctx4.fill();
+    ctx4.fillStyle = '#F4F1DE';
+    ctx4.fillRect(30, 85, 140, 42);
+    ctx4.fillStyle = '#FFD166';
+    ctx4.fillRect(138, 68, 18, 10);
+    ctx4.fillStyle = '#22223B';
+    ctx4.beginPath();
+    ctx4.arc(100, 106, 28, 0, Math.PI * 2);
+    ctx4.fill();
+    ctx4.fillStyle = '#4EA8DE';
+    ctx4.beginPath();
+    ctx4.arc(100, 106, 18, 0, Math.PI * 2);
+    ctx4.fill();
+    ctx4.fillStyle = '#FFFFFF';
+    ctx4.beginPath();
+    ctx4.arc(93, 99, 5, 0, Math.PI * 2);
+    ctx4.fill();
+
+    const ctx5 = document.getElementById('c5').getContext('2d');
+    ctx5.fillStyle = '#E0FBFC';
+    ctx5.fillRect(0, 0, 200, 200);
+    ctx5.fillStyle = '#F4A261';
+    ctx5.beginPath();
+    ctx5.moveTo(68, 95);
+    ctx5.lineTo(132, 95);
+    ctx5.lineTo(100, 180);
+    ctx5.closePath();
+    ctx5.fill();
+    ctx5.strokeStyle = '#E76F51';
+    ctx5.lineWidth = 2;
+    ctx5.beginPath();
+    ctx5.moveTo(78, 115);
+    ctx5.lineTo(122, 115);
+    ctx5.moveTo(86, 138);
+    ctx5.lineTo(114, 138);
+    ctx5.stroke();
+    ctx5.fillStyle = '#80ED99';
+    ctx5.beginPath();
+    ctx5.arc(100, 82, 34, 0, Math.PI * 2);
+    ctx5.fill();
+    ctx5.fillStyle = '#FF8FA3';
+    ctx5.beginPath();
+    ctx5.arc(100, 52, 26, 0, Math.PI * 2);
+    ctx5.fill();
+    ctx5.fillStyle = '#D90429';
+    ctx5.beginPath();
+    ctx5.arc(100, 23, 7, 0, Math.PI * 2);
+    ctx5.fill();
+
+    const ctx6 = document.getElementById('c6').getContext('2d');
+    ctx6.fillStyle = '#CAF0F8';
+    ctx6.fillRect(0, 0, 200, 200);
+    ctx6.fillStyle = '#FFD166';
+    ctx6.beginPath();
+    ctx6.arc(155, 42, 18, 0, Math.PI * 2);
+    ctx6.fill();
+    ctx6.fillStyle = '#6C584C';
+    ctx6.fillRect(97, 35, 6, 95);
+    ctx6.fillStyle = '#FFFFFF';
+    ctx6.beginPath();
+    ctx6.moveTo(95, 42);
+    ctx6.lineTo(42, 120);
+    ctx6.lineTo(95, 120);
+    ctx6.fill();
+    ctx6.fillStyle = '#FF6B6B';
+    ctx6.beginPath();
+    ctx6.moveTo(105, 52);
+    ctx6.lineTo(152, 120);
+    ctx6.lineTo(105, 120);
+    ctx6.fill();
+    ctx6.fillStyle = '#3D405B';
+    ctx6.beginPath();
+    ctx6.moveTo(35, 128);
+    ctx6.lineTo(165, 128);
+    ctx6.lineTo(145, 155);
+    ctx6.lineTo(55, 155);
+    ctx6.closePath();
+    ctx6.fill();
+    ctx6.fillStyle = '#0096C7';
+    ctx6.fillRect(0, 152, 200, 48);
+
+    const ctx7 = document.getElementById('c7').getContext('2d');
+    ctx7.fillStyle = '#D8F3DC';
+    ctx7.fillRect(0, 0, 200, 200);
+    ctx7.fillStyle = '#52B788';
+    ctx7.fillRect(0, 160, 200, 40);
+    ctx7.fillStyle = '#BC4749';
+    ctx7.fillRect(125, 48, 18, 35);
+    ctx7.fillStyle = '#F4F1DE';
+    ctx7.fillRect(48, 90, 104, 70);
+    ctx7.fillStyle = '#E07A5F';
+    ctx7.beginPath();
+    ctx7.moveTo(36, 92);
+    ctx7.lineTo(100, 40);
+    ctx7.lineTo(164, 92);
+    ctx7.closePath();
+    ctx7.fill();
+    ctx7.fillStyle = '#6C584C';
+    ctx7.fillRect(88, 118, 24, 42);
+    ctx7.fillStyle = '#4EA8DE';
+    ctx7.fillRect(58, 105, 20, 20);
+    ctx7.fillRect(122, 105, 20, 20);
+
+    const ctx8 = document.getElementById('c8').getContext('2d');
+    ctx8.fillStyle = '#EDE7F6';
+    ctx8.fillRect(0, 0, 200, 200);
+    ctx8.strokeStyle = '#5E60CE';
+    ctx8.lineWidth = 4;
+    ctx8.beginPath();
+    ctx8.moveTo(100, 52);
+    ctx8.lineTo(100, 28);
+    ctx8.stroke();
+    ctx8.fillStyle = '#FF5964';
+    ctx8.beginPath();
+    ctx8.arc(100, 24, 7, 0, Math.PI * 2);
+    ctx8.fill();
+    ctx8.fillStyle = '#5E60CE';
+    ctx8.fillRect(32, 85, 12, 32);
+    ctx8.fillRect(156, 85, 12, 32);
+    ctx8.fillStyle = '#7400B8';
+    ctx8.beginPath();
+    ctx8.roundRect(44, 52, 112, 102, 18);
+    ctx8.fill();
+    ctx8.fillStyle = '#80FFDB';
+    ctx8.beginPath();
+    ctx8.arc(76, 92, 13, 0, Math.PI * 2);
+    ctx8.arc(124, 92, 13, 0, Math.PI * 2);
+    ctx8.fill();
+    ctx8.fillStyle = '#240046';
+    ctx8.beginPath();
+    ctx8.arc(76, 92, 5, 0, Math.PI * 2);
+    ctx8.arc(124, 92, 5, 0, Math.PI * 2);
+    ctx8.fill();
+    ctx8.fillStyle = '#FFFFFF';
+    ctx8.fillRect(72, 124, 56, 12);
+    ctx8.strokeStyle = '#7400B8';
+    ctx8.lineWidth = 2;
+    ctx8.beginPath();
+    ctx8.moveTo(86, 124); ctx8.lineTo(86, 136);
+    ctx8.moveTo(100, 124); ctx8.lineTo(100, 136);
+    ctx8.moveTo(114, 124); ctx8.lineTo(114, 136);
+    ctx8.stroke();
+  </script>
+
+</body>
+</html>
