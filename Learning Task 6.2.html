@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learning Task 6.2 - SVG Animated Object</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    svg {
+      background-color: #ffffff;
+      border: 3px solid #FF8B82;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 300 x 300 SVG Animated Sun & Rotating Rays -->
+  <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- Background Sky -->
+    <rect x="0" y="0" width="300" height="300" fill="#E6F7F5" />
+
+    <!-- Rotating Sun Rays Group -->
+    <g stroke="#FF8B82" stroke-width="8" stroke-linecap="round">
+      <line x1="150" y1="35" x2="150" y2="65" />
+      <line x1="150" y1="235" x2="150" y2="265" />
+      <line x1="35" y1="150" x2="65" y2="150" />
+      <line x1="235" y1="150" x2="265" y2="150" />
+      <line x1="68" y1="68" x2="90" y2="90" />
+      <line x1="210" y1="210" x2="232" y2="232" />
+      <line x1="232" y1="68" x2="210" y2="90" />
+      <line x1="90" y1="210" x2="68" y2="232" />
+
+      <!-- Continuous Rotation Animation -->
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        from="0 150 150" 
+        to="360 150 150" 
+        dur="10s" 
+        repeatCount="indefinite" />
+    </g>
+
+    <!-- Pulsing Outer Sun Ring -->
+    <circle cx="150" cy="150" r="65" fill="none" stroke="#00B4A6" stroke-width="4">
+      <animate 
+        attributeName="r" 
+        values="62;72;62" 
+        dur="2.5s" 
+        repeatCount="indefinite" />
+      <animate 
+        attributeName="opacity" 
+        values="1;0.3;1" 
+        dur="2.5s" 
+        repeatCount="indefinite" />
+    </circle>
+
+    <!-- Center Sun Body -->
+    <circle cx="150" cy="150" r="50" fill="#FFD12A" stroke="#FF8B82" stroke-width="4" />
+
+    <!-- Blinking Eyes -->
+    <circle cx="134" cy="142" r="5" fill="#333333">
+      <animate attributeName="ry" values="5;0.5;5" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="166" cy="142" r="5" fill="#333333">
+      <animate attributeName="ry" values="5;0.5;5" dur="3s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Smile -->
+    <path d="M 134 162 Q 150 176 166 162" fill="none" stroke="#333333" stroke-width="4" stroke-linecap="round" />
+
+  </svg>
+
+</body>
+</html>
